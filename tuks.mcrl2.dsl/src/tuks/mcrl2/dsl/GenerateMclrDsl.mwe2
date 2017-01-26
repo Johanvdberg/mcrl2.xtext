@@ -14,7 +14,7 @@ Workflow {
 				rootPath = rootPath
 				eclipsePlugin = {
 					enabled = true
-				}
+				} 
 				createEclipseMetaData = true
 			}
 			code = {
