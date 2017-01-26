@@ -1,0 +1,301 @@
+grammar tuks.mcrl2.dsl.MclrDsl with org.eclipse.xtext.common.Terminals
+
+generate mclrDsl "http://www.mcrl2.tuks/dsl/MclrDsl"
+
+
+Model:
+	->left+=mCRL2SpecElt* ->init=Init ->right+=mCRL2SpecElt*;
+
+
+ActionName:
+	name=ID;
+
+ActionNameList:
+	id_list+=[ActionName] (',' id_list+=[ActionName])*;
+	
+Action:
+	id=[ActionName] ('(' exp=DataExprList ')')?;
+
+ActIdSet:
+	'{' ids=ActionNameList '}';
+
+Assignment:
+	id=VarName '=' data_exp=DataExpr;
+
+AssignmentList:
+	ass+=Assignment (',' ass+=Assignment)*;
+
+ActList:
+	id_list+=ActionName (',' id_list+=ActionName)*;
+	
+ActDecl:
+	id=ActList (':' sort=SortExpr)? ';';
+	
+ActSpec:
+	'act' act_list+=ActDecl+;
+	
+BagEnumElt:
+	left=DataExpr ':' right=DataExpr;
+
+BagEnumEltList:
+	bag_list+=BagEnumElt (',' bag_list+=BagEnumElt)*;
+
+
+	
+ConstrName:
+	name=ID
+;
+
+ConstrDecl:
+	id=ConstrName ->('(' proj=ProjDeclList ')')? ->('?' right_id=ID)?;
+
+ConstrDeclList:
+	decl+=ConstrDecl ('|' decl+=ConstrDecl)*;
+	
+ConsSpec:
+	'cons' (ids+=ConstrName ';')+;
+
+DataName:
+	name=ID
+;
+
+DataExprUnit:
+	lower=DataExprUnitTerm ->('(' data=DataExprList ')')?;
+
+DataExprUnitTerm:
+	id=DataName |
+	number=INT |
+	is_true?='true' |
+	is_false?='false' |
+	'(' exp=DataExpr ')' |
+	(
+		is_exp?='!' |
+		is_minus?='-' |
+		is_sharp?='#'
+	) unit=DataExprUnit;
+
+	
+DataExpr:
+	left=DataExpr1 
+	(
+		'[' right_1=DataExpr '->' right_2=DataExpr ']' |
+		'(' right=DataExprList ')'
+	);
+
+DataExpr1:
+	left=DataExpr2 
+	(
+		->(
+			('+') |
+			('-') |
+			('/') |
+			('div') |
+			('mod') |
+			('*') 
+		) right=DataExpr 
+
+	);
+
+
+DataExpr2:
+	left=DataExprTerm 
+	(
+		->(
+			('=>') |
+			('||') |
+			('&&') |
+			('==') |
+			('!=') |
+			('<') |
+			('<=') |
+			('>=') |
+			('>') |
+			('in') |
+			('|>') |
+			('<|') |
+			('++') |
+			('.')
+		) right=DataExpr// |
+		//'whr' right_list=AssignmentList 'end'
+	);
+DataExprTerm: 
+	var_id=[VarName] |
+	num=INT |
+	is_true?='true' |
+	is_false?='false' |	
+	is_sqaure_bracket?='[' data_list=DataExprList? ']' |
+	is_curly_bracket?='{' 
+	(
+		is_colon?=':'               |
+		->bag=BagEnumEltList        | 
+		->data_exp_list=DataExprList |
+		->(
+			var_decl=VarsDecl '|' data_exp=DataExpr
+		)
+	)? '}' |		
+	is_round_bracket?='(' data_exp=DataExpr ')' |
+	'!' data_exp=DataExpr |
+	'-' data_exp=DataExpr |
+	'#' data_exp=DataExpr |
+	(
+		(
+			is_forall?='forall' |
+			is_exist?='exists'  |
+			is_lambda?='lambda'
+		) var_list=VarsDeclList '.' data_exp=DataExpr
+	);
+
+
+DataExprList:
+	data_exp+=DataExpr (',' data_exp+=DataExpr)*;
+
+
+
+EqnDecl:
+	->(cond=DataExpr '->')? left=DataExpr '=' right=DataExpr ';';
+
+EqnSpec:
+	spec=VarSpec? 'eqn' eqn+=EqnDecl+;
+
+MapSpec:
+	'map' (ids+=SortIdsDecl ';')+;
+
+MultActId:
+	ids+=[ActionName] ('|' ids+=[ActionName])*;
+
+MultActIdList:
+	acts+=MultActId (',' acts+=MultActId)*;
+
+MultActIdSet:
+	'{' (data=MultActIdList | is_empty?=WS) '}';
+
+
+ProcDecl:
+	id=ProcName('(' variables=VarsDeclList ')')? '=' right=ProcExpr ';';
+
+ProcSpec:
+	'proc' procs+=ProcDecl+;
+	
+ProjName:
+	name=ID
+;
+ProjDecl:
+	(id=ProjName ':')? sort=SortExpr;
+
+ProjDeclList:
+	proj+=ProjDecl (',' prof+=ProjDecl)*;
+
+ProcExpr:
+	left=ProcExprTerm 
+	(
+		(
+			(is_plus?='+') |
+			(is_par?='||') |
+			(is_par_right?='||_') |
+			(is_left_shist?='<<') |
+			(is_point?='.') |
+			(is_or?='|')
+		) right=ProcExpr |
+	(is_at?='@') unit_right=DataExprUnit
+	);
+
+
+ProcName:
+	name=ID
+;
+
+ProcExprTerm:
+	->action=Action |
+	->(proc_id=[ProcName] '(' ass=AssignmentList? ')') |
+	->(map_id=[SortName] '(' ass=AssignmentList? ')') |
+	is_delta?='delta' |
+	is_tau?='tau' |
+	is_block?='block'   '(' act_set=ActIdSet ',' proc_exp=ProcExpr ')' |
+	is_allow?='allow'   '(' multi_set=MultActIdSet ',' proc_exp=ProcExpr ')' |
+	is_hide?='hide'     '(' act_set=ActIdSet ',' proc_exp=ProcExpr ')' |
+	//is_rename?='rename' '(' ren_set=RenExprSet ',' proc_exp=ProcExpr ')' |
+	//is_comm?='comm'     '(' comm_set=CommExprSet ',' proc_exp=ProcExpr ')' |
+	->is_grp?='(' proc_exp=ProcExpr ')' |
+	is_sum?='sum' variables=VarsDeclList '.' proc_exp=ProcExpr |
+	DataExprUnit '->' proc_exp=ProcExpr ('<>' proc_exp_other=ProcExpr)?|
+	'dist' VarsDeclList '[' data=DataExpr ']' '.' proc_exp=ProcExpr;
+
+
+
+	
+SortName:
+	name=ID
+;	
+
+SortIdList:
+	id_list+=SortName (',' id_list+=SortName)*;
+	
+SortIdsDecl:
+	id=SortIdList ':' sort=SortExpr;
+
+
+
+SortExpr:
+	left=SortExprTerm (('->') | ('#')) right=SortExpr;
+
+SortExprTerm:
+	is_bool?='Bool' |
+	is_pos?='Pos' |
+	is_nat?='Nat' |
+	is_int?='Int' |
+	is_real?='Real' |
+	(
+		(
+			is_list?='List' |
+			set?='Set' |
+			bag?='Bag' |
+			fset?='FSet' |
+			fbag?='FBag'
+		) '(' exp=SortExpr ')'
+	) |
+	id=[SortName] |
+	'(' exp=SortExpr ')' |
+	'struct' const=ConstrDeclList;
+
+
+SortDecl:
+	//id_list+=IdList ';' |
+	id=SortName '=' sort=SortExpr ';';
+
+SortSpec:
+	'sort' sorts+=SortDecl+;
+
+GlobVarSpec:
+	'glob' (vars_list+=VarsDeclList ';')+;
+
+	
+VarName:
+	name=ID	
+	;
+	
+VarIdList:
+	id_list+=VarName (',' id_list+=VarName)*;
+
+VarsDecl:
+	id=VarIdList ':' sort=SortExpr;
+
+VarsDeclList:
+	varialbes+=VarsDecl (',' varialbes+=VarsDecl)*;
+
+VarSpec:
+	'var' (list+=VarsDeclList ';')+;
+		
+mCRL2SpecElt:
+	sort=SortSpec |
+	const=ConsSpec |
+	map=MapSpec |
+	eqn=EqnSpec |
+	blobal=GlobVarSpec |
+	act=ActSpec |
+	proc=ProcSpec;
+
+Init:
+	'init' proc=ProcExpr ';';
+	
+
+	
