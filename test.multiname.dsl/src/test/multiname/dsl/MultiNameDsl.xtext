@@ -4,7 +4,7 @@ generate multiNameDsl "http://www.multiname.test/dsl/MultiNameDsl"
 
 Model:
 	modules+=Module+;
-	
+
 Module:
 	'begin module' name=ID
 	vars+=Vars*
@@ -18,13 +18,12 @@ FuncName:
 	name=ID;
 
 Name:
-	VarName|FuncName
-;
+	VarName | FuncName;
 
 Funcs:
-	'func' left=FuncName (bracket?='(' ')')? '=' right=[Name]';';
-	
+	'func' left=FuncName (bracket?='(' ')')? '=' right=[Name] ';';
+
 Vars:
-	'var' VarName ';';
+	'var' varName=VarName ';';
 	
 

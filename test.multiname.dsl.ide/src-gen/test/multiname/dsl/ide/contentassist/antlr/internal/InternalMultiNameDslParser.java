@@ -1772,25 +1772,31 @@ public class InternalMultiNameDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Vars__Group__1__Impl"
-    // InternalMultiNameDsl.g:599:1: rule__Vars__Group__1__Impl : ( ruleVarName ) ;
+    // InternalMultiNameDsl.g:599:1: rule__Vars__Group__1__Impl : ( ( rule__Vars__VarNameAssignment_1 ) ) ;
     public final void rule__Vars__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMultiNameDsl.g:603:1: ( ( ruleVarName ) )
-            // InternalMultiNameDsl.g:604:1: ( ruleVarName )
+            // InternalMultiNameDsl.g:603:1: ( ( ( rule__Vars__VarNameAssignment_1 ) ) )
+            // InternalMultiNameDsl.g:604:1: ( ( rule__Vars__VarNameAssignment_1 ) )
             {
-            // InternalMultiNameDsl.g:604:1: ( ruleVarName )
-            // InternalMultiNameDsl.g:605:2: ruleVarName
+            // InternalMultiNameDsl.g:604:1: ( ( rule__Vars__VarNameAssignment_1 ) )
+            // InternalMultiNameDsl.g:605:2: ( rule__Vars__VarNameAssignment_1 )
             {
-             before(grammarAccess.getVarsAccess().getVarNameParserRuleCall_1()); 
+             before(grammarAccess.getVarsAccess().getVarNameAssignment_1()); 
+            // InternalMultiNameDsl.g:606:2: ( rule__Vars__VarNameAssignment_1 )
+            // InternalMultiNameDsl.g:606:3: rule__Vars__VarNameAssignment_1
+            {
             pushFollow(FOLLOW_2);
-            ruleVarName();
+            rule__Vars__VarNameAssignment_1();
 
             state._fsp--;
 
-             after(grammarAccess.getVarsAccess().getVarNameParserRuleCall_1()); 
+
+            }
+
+             after(grammarAccess.getVarsAccess().getVarNameAssignment_1()); 
 
             }
 
@@ -2245,6 +2251,47 @@ public class InternalMultiNameDslParser extends AbstractInternalContentAssistPar
         return ;
     }
     // $ANTLR end "rule__Funcs__RightAssignment_4"
+
+
+    // $ANTLR start "rule__Vars__VarNameAssignment_1"
+    // InternalMultiNameDsl.g:784:1: rule__Vars__VarNameAssignment_1 : ( ruleVarName ) ;
+    public final void rule__Vars__VarNameAssignment_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalMultiNameDsl.g:788:1: ( ( ruleVarName ) )
+            // InternalMultiNameDsl.g:789:2: ( ruleVarName )
+            {
+            // InternalMultiNameDsl.g:789:2: ( ruleVarName )
+            // InternalMultiNameDsl.g:790:3: ruleVarName
+            {
+             before(grammarAccess.getVarsAccess().getVarNameVarNameParserRuleCall_1_0()); 
+            pushFollow(FOLLOW_2);
+            ruleVarName();
+
+            state._fsp--;
+
+             after(grammarAccess.getVarsAccess().getVarNameVarNameParserRuleCall_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Vars__VarNameAssignment_1"
 
     // Delegated rules
 

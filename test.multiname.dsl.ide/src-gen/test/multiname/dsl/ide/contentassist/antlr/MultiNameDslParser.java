@@ -45,6 +45,7 @@ public class MultiNameDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFuncsAccess().getLeftAssignment_1(), "rule__Funcs__LeftAssignment_1");
 					put(grammarAccess.getFuncsAccess().getBracketAssignment_2_0(), "rule__Funcs__BracketAssignment_2_0");
 					put(grammarAccess.getFuncsAccess().getRightAssignment_4(), "rule__Funcs__RightAssignment_4");
+					put(grammarAccess.getVarsAccess().getVarNameAssignment_1(), "rule__Vars__VarNameAssignment_1");
 				}
 			};
 		}

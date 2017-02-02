@@ -13,7 +13,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="funcs" upperBound="-1"
         eType="#//Funcs" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="VarName" eSuperTypes="#//Name #//Vars"/>
+  <eClassifiers xsi:type="ecore:EClass" name="VarName" eSuperTypes="#//Name"/>
   <eClassifiers xsi:type="ecore:EClass" name="FuncName" eSuperTypes="#//Name"/>
   <eClassifiers xsi:type="ecore:EClass" name="Name">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -24,5 +24,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="bracket" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//Name"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Vars"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Vars">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="varName" eType="#//VarName"
+        containment="true"/>
+  </eClassifiers>
 </ecore:EPackage>

@@ -14,6 +14,6 @@ package test.multiname.dsl.multiNameDsl;
  * @model
  * @generated
  */
-public interface VarName extends Name, Vars
+public interface VarName extends Name
 {
 } // VarName

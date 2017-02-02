@@ -832,41 +832,60 @@ public class InternalMultiNameDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleVars"
-    // InternalMultiNameDsl.g:343:1: ruleVars returns [EObject current=null] : (otherlv_0= 'var' this_VarName_1= ruleVarName otherlv_2= ';' ) ;
+    // InternalMultiNameDsl.g:343:1: ruleVars returns [EObject current=null] : (otherlv_0= 'var' ( (lv_varName_1_0= ruleVarName ) ) otherlv_2= ';' ) ;
     public final EObject ruleVars() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token otherlv_2=null;
-        EObject this_VarName_1 = null;
+        EObject lv_varName_1_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalMultiNameDsl.g:349:2: ( (otherlv_0= 'var' this_VarName_1= ruleVarName otherlv_2= ';' ) )
-            // InternalMultiNameDsl.g:350:2: (otherlv_0= 'var' this_VarName_1= ruleVarName otherlv_2= ';' )
+            // InternalMultiNameDsl.g:349:2: ( (otherlv_0= 'var' ( (lv_varName_1_0= ruleVarName ) ) otherlv_2= ';' ) )
+            // InternalMultiNameDsl.g:350:2: (otherlv_0= 'var' ( (lv_varName_1_0= ruleVarName ) ) otherlv_2= ';' )
             {
-            // InternalMultiNameDsl.g:350:2: (otherlv_0= 'var' this_VarName_1= ruleVarName otherlv_2= ';' )
-            // InternalMultiNameDsl.g:351:3: otherlv_0= 'var' this_VarName_1= ruleVarName otherlv_2= ';'
+            // InternalMultiNameDsl.g:350:2: (otherlv_0= 'var' ( (lv_varName_1_0= ruleVarName ) ) otherlv_2= ';' )
+            // InternalMultiNameDsl.g:351:3: otherlv_0= 'var' ( (lv_varName_1_0= ruleVarName ) ) otherlv_2= ';'
             {
             otherlv_0=(Token)match(input,18,FOLLOW_4); 
 
             			newLeafNode(otherlv_0, grammarAccess.getVarsAccess().getVarKeyword_0());
             		
+            // InternalMultiNameDsl.g:355:3: ( (lv_varName_1_0= ruleVarName ) )
+            // InternalMultiNameDsl.g:356:4: (lv_varName_1_0= ruleVarName )
+            {
+            // InternalMultiNameDsl.g:356:4: (lv_varName_1_0= ruleVarName )
+            // InternalMultiNameDsl.g:357:5: lv_varName_1_0= ruleVarName
+            {
 
-            			newCompositeNode(grammarAccess.getVarsAccess().getVarNameParserRuleCall_1());
-            		
+            					newCompositeNode(grammarAccess.getVarsAccess().getVarNameVarNameParserRuleCall_1_0());
+            				
             pushFollow(FOLLOW_10);
-            this_VarName_1=ruleVarName();
+            lv_varName_1_0=ruleVarName();
 
             state._fsp--;
 
 
-            			current = this_VarName_1;
-            			afterParserOrEnumRuleCall();
-            		
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getVarsRule());
+            					}
+            					set(
+            						current,
+            						"varName",
+            						lv_varName_1_0,
+            						"test.multiname.dsl.MultiNameDsl.VarName");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
             otherlv_2=(Token)match(input,17,FOLLOW_2); 
 
             			newLeafNode(otherlv_2, grammarAccess.getVarsAccess().getSemicolonKeyword_2());

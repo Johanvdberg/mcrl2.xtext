@@ -272,13 +272,22 @@ public interface MultiNameDslPackage extends EPackage
   int VARS = 6;
 
   /**
+   * The feature id for the '<em><b>Var Name</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARS__VAR_NAME = 0;
+
+  /**
    * The number of structural features of the '<em>Vars</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VARS_FEATURE_COUNT = 0;
+  int VARS_FEATURE_COUNT = 1;
 
 
   /**
@@ -440,6 +449,17 @@ public interface MultiNameDslPackage extends EPackage
   EClass getVars();
 
   /**
+   * Returns the meta object for the containment reference '{@link test.multiname.dsl.multiNameDsl.Vars#getVarName <em>Var Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Var Name</em>'.
+   * @see test.multiname.dsl.multiNameDsl.Vars#getVarName()
+   * @see #getVars()
+   * @generated
+   */
+  EReference getVars_VarName();
+
+  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -595,6 +615,14 @@ public interface MultiNameDslPackage extends EPackage
      * @generated
      */
     EClass VARS = eINSTANCE.getVars();
+
+    /**
+     * The meta object literal for the '<em><b>Var Name</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VARS__VAR_NAME = eINSTANCE.getVars_VarName();
 
   }
 

@@ -196,21 +196,25 @@ public class MultiNameDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "test.multiname.dsl.MultiNameDsl.Vars");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cVarKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final RuleCall cVarNameParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final Assignment cVarNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cVarNameVarNameParserRuleCall_1_0 = (RuleCall)cVarNameAssignment_1.eContents().get(0);
 		private final Keyword cSemicolonKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
 		//Vars:
-		//	'var' VarName ';';
+		//	'var' varName=VarName ';';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'var' VarName ';'
+		//'var' varName=VarName ';'
 		public Group getGroup() { return cGroup; }
 		
 		//'var'
 		public Keyword getVarKeyword_0() { return cVarKeyword_0; }
 		
+		//varName=VarName
+		public Assignment getVarNameAssignment_1() { return cVarNameAssignment_1; }
+		
 		//VarName
-		public RuleCall getVarNameParserRuleCall_1() { return cVarNameParserRuleCall_1; }
+		public RuleCall getVarNameVarNameParserRuleCall_1_0() { return cVarNameVarNameParserRuleCall_1_0; }
 		
 		//';'
 		public Keyword getSemicolonKeyword_2() { return cSemicolonKeyword_2; }
@@ -334,7 +338,7 @@ public class MultiNameDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Vars:
-	//	'var' VarName ';';
+	//	'var' varName=VarName ';';
 	public VarsElements getVarsAccess() {
 		return pVars;
 	}

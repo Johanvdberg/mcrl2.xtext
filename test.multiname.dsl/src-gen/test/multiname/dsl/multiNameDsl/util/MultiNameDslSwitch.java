@@ -92,7 +92,6 @@ public class MultiNameDslSwitch<T> extends Switch<T>
         VarName varName = (VarName)theEObject;
         T result = caseVarName(varName);
         if (result == null) result = caseName(varName);
-        if (result == null) result = caseVars(varName);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }

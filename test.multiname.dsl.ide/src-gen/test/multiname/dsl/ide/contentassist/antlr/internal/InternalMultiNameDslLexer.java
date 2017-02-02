@@ -211,10 +211,10 @@ public class InternalMultiNameDslLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMultiNameDsl.g:784:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalMultiNameDsl.g:784:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalMultiNameDsl.g:799:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalMultiNameDsl.g:799:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // InternalMultiNameDsl.g:784:11: ( '^' )?
+            // InternalMultiNameDsl.g:799:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -223,7 +223,7 @@ public class InternalMultiNameDslLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // InternalMultiNameDsl.g:784:11: '^'
+                    // InternalMultiNameDsl.g:799:11: '^'
                     {
                     match('^'); 
 
@@ -241,7 +241,7 @@ public class InternalMultiNameDslLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalMultiNameDsl.g:784:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalMultiNameDsl.g:799:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -290,10 +290,10 @@ public class InternalMultiNameDslLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMultiNameDsl.g:786:10: ( ( '0' .. '9' )+ )
-            // InternalMultiNameDsl.g:786:12: ( '0' .. '9' )+
+            // InternalMultiNameDsl.g:801:10: ( ( '0' .. '9' )+ )
+            // InternalMultiNameDsl.g:801:12: ( '0' .. '9' )+
             {
-            // InternalMultiNameDsl.g:786:12: ( '0' .. '9' )+
+            // InternalMultiNameDsl.g:801:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -307,7 +307,7 @@ public class InternalMultiNameDslLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // InternalMultiNameDsl.g:786:13: '0' .. '9'
+            	    // InternalMultiNameDsl.g:801:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -339,10 +339,10 @@ public class InternalMultiNameDslLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMultiNameDsl.g:788:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // InternalMultiNameDsl.g:788:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalMultiNameDsl.g:803:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalMultiNameDsl.g:803:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // InternalMultiNameDsl.g:788:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalMultiNameDsl.g:803:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -360,10 +360,10 @@ public class InternalMultiNameDslLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // InternalMultiNameDsl.g:788:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalMultiNameDsl.g:803:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // InternalMultiNameDsl.g:788:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalMultiNameDsl.g:803:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -379,7 +379,7 @@ public class InternalMultiNameDslLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // InternalMultiNameDsl.g:788:21: '\\\\' .
+                    	    // InternalMultiNameDsl.g:803:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -387,7 +387,7 @@ public class InternalMultiNameDslLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalMultiNameDsl.g:788:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalMultiNameDsl.g:803:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -412,10 +412,10 @@ public class InternalMultiNameDslLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalMultiNameDsl.g:788:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalMultiNameDsl.g:803:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // InternalMultiNameDsl.g:788:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalMultiNameDsl.g:803:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -431,7 +431,7 @@ public class InternalMultiNameDslLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // InternalMultiNameDsl.g:788:54: '\\\\' .
+                    	    // InternalMultiNameDsl.g:803:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -439,7 +439,7 @@ public class InternalMultiNameDslLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalMultiNameDsl.g:788:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalMultiNameDsl.g:803:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -482,12 +482,12 @@ public class InternalMultiNameDslLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMultiNameDsl.g:790:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalMultiNameDsl.g:790:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalMultiNameDsl.g:805:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalMultiNameDsl.g:805:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalMultiNameDsl.g:790:24: ( options {greedy=false; } : . )*
+            // InternalMultiNameDsl.g:805:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -512,7 +512,7 @@ public class InternalMultiNameDslLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // InternalMultiNameDsl.g:790:52: .
+            	    // InternalMultiNameDsl.g:805:52: .
             	    {
             	    matchAny(); 
 
@@ -542,12 +542,12 @@ public class InternalMultiNameDslLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMultiNameDsl.g:792:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalMultiNameDsl.g:792:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalMultiNameDsl.g:807:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalMultiNameDsl.g:807:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalMultiNameDsl.g:792:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalMultiNameDsl.g:807:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -560,7 +560,7 @@ public class InternalMultiNameDslLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalMultiNameDsl.g:792:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalMultiNameDsl.g:807:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -580,7 +580,7 @@ public class InternalMultiNameDslLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalMultiNameDsl.g:792:40: ( ( '\\r' )? '\\n' )?
+            // InternalMultiNameDsl.g:807:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -589,9 +589,9 @@ public class InternalMultiNameDslLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // InternalMultiNameDsl.g:792:41: ( '\\r' )? '\\n'
+                    // InternalMultiNameDsl.g:807:41: ( '\\r' )? '\\n'
                     {
-                    // InternalMultiNameDsl.g:792:41: ( '\\r' )?
+                    // InternalMultiNameDsl.g:807:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -600,7 +600,7 @@ public class InternalMultiNameDslLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // InternalMultiNameDsl.g:792:41: '\\r'
+                            // InternalMultiNameDsl.g:807:41: '\\r'
                             {
                             match('\r'); 
 
@@ -632,10 +632,10 @@ public class InternalMultiNameDslLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMultiNameDsl.g:794:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalMultiNameDsl.g:794:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalMultiNameDsl.g:809:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalMultiNameDsl.g:809:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalMultiNameDsl.g:794:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalMultiNameDsl.g:809:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -689,8 +689,8 @@ public class InternalMultiNameDslLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMultiNameDsl.g:796:16: ( . )
-            // InternalMultiNameDsl.g:796:18: .
+            // InternalMultiNameDsl.g:811:16: ( . )
+            // InternalMultiNameDsl.g:811:18: .
             {
             matchAny(); 
 

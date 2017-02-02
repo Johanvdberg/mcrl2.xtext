@@ -20,6 +20,7 @@ import test.multiname.dsl.multiNameDsl.Model;
 import test.multiname.dsl.multiNameDsl.Module;
 import test.multiname.dsl.multiNameDsl.MultiNameDslPackage;
 import test.multiname.dsl.multiNameDsl.VarName;
+import test.multiname.dsl.multiNameDsl.Vars;
 import test.multiname.dsl.services.MultiNameDslGrammarAccess;
 
 @SuppressWarnings("all")
@@ -50,6 +51,9 @@ public class MultiNameDslSemanticSequencer extends AbstractDelegatingSemanticSeq
 				return; 
 			case MultiNameDslPackage.VAR_NAME:
 				sequence_VarName(context, (VarName) semanticObject); 
+				return; 
+			case MultiNameDslPackage.VARS:
+				sequence_Vars(context, (Vars) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -115,7 +119,6 @@ public class MultiNameDslSemanticSequencer extends AbstractDelegatingSemanticSeq
 	 * Contexts:
 	 *     VarName returns VarName
 	 *     Name returns VarName
-	 *     Vars returns VarName
 	 *
 	 * Constraint:
 	 *     name=ID
@@ -127,6 +130,24 @@ public class MultiNameDslSemanticSequencer extends AbstractDelegatingSemanticSeq
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getVarNameAccess().getNameIDTerminalRuleCall_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Vars returns Vars
+	 *
+	 * Constraint:
+	 *     varName=VarName
+	 */
+	protected void sequence_Vars(ISerializationContext context, Vars semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, MultiNameDslPackage.Literals.VARS__VAR_NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MultiNameDslPackage.Literals.VARS__VAR_NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getVarsAccess().getVarNameVarNameParserRuleCall_1_0(), semanticObject.getVarName());
 		feeder.finish();
 	}
 	

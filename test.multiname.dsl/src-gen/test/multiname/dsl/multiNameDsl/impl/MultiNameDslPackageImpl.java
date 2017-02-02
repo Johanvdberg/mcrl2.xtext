@@ -295,6 +295,16 @@ public class MultiNameDslPackageImpl extends EPackageImpl implements MultiNameDs
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getVars_VarName()
+  {
+    return (EReference)varsEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public MultiNameDslFactory getMultiNameDslFactory()
   {
     return (MultiNameDslFactory)getEFactoryInstance();
@@ -341,6 +351,7 @@ public class MultiNameDslPackageImpl extends EPackageImpl implements MultiNameDs
     createEReference(funcsEClass, FUNCS__RIGHT);
 
     varsEClass = createEClass(VARS);
+    createEReference(varsEClass, VARS__VAR_NAME);
   }
 
   /**
@@ -373,7 +384,6 @@ public class MultiNameDslPackageImpl extends EPackageImpl implements MultiNameDs
 
     // Add supertypes to classes
     varNameEClass.getESuperTypes().add(this.getName_());
-    varNameEClass.getESuperTypes().add(this.getVars());
     funcNameEClass.getESuperTypes().add(this.getName_());
 
     // Initialize classes and features; add operations and parameters
@@ -398,6 +408,7 @@ public class MultiNameDslPackageImpl extends EPackageImpl implements MultiNameDs
     initEReference(getFuncs_Right(), this.getName_(), null, "right", null, 0, 1, Funcs.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(varsEClass, Vars.class, "Vars", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getVars_VarName(), this.getVarName(), null, "varName", null, 0, 1, Vars.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

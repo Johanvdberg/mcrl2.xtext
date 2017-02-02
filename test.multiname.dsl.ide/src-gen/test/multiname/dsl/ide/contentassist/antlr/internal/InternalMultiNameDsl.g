@@ -602,9 +602,9 @@ rule__Vars__Group__1__Impl
 	}
 :
 (
-	{ before(grammarAccess.getVarsAccess().getVarNameParserRuleCall_1()); }
-	ruleVarName
-	{ after(grammarAccess.getVarsAccess().getVarNameParserRuleCall_1()); }
+	{ before(grammarAccess.getVarsAccess().getVarNameAssignment_1()); }
+	(rule__Vars__VarNameAssignment_1)
+	{ after(grammarAccess.getVarsAccess().getVarNameAssignment_1()); }
 )
 ;
 finally {
@@ -775,6 +775,21 @@ rule__Funcs__RightAssignment_4
 			{ after(grammarAccess.getFuncsAccess().getRightNameIDTerminalRuleCall_4_0_1()); }
 		)
 		{ after(grammarAccess.getFuncsAccess().getRightNameCrossReference_4_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Vars__VarNameAssignment_1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getVarsAccess().getVarNameVarNameParserRuleCall_1_0()); }
+		ruleVarName
+		{ after(grammarAccess.getVarsAccess().getVarNameVarNameParserRuleCall_1_0()); }
 	)
 ;
 finally {

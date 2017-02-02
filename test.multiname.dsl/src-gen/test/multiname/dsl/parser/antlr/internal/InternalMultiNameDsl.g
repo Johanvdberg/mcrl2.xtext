@@ -352,14 +352,25 @@ ruleVars returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getVarsAccess().getVarKeyword_0());
 		}
-		{
-			newCompositeNode(grammarAccess.getVarsAccess().getVarNameParserRuleCall_1());
-		}
-		this_VarName_1=ruleVarName
-		{
-			$current = $this_VarName_1.current;
-			afterParserOrEnumRuleCall();
-		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getVarsAccess().getVarNameVarNameParserRuleCall_1_0());
+				}
+				lv_varName_1_0=ruleVarName
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getVarsRule());
+					}
+					set(
+						$current,
+						"varName",
+						lv_varName_1_0,
+						"test.multiname.dsl.MultiNameDsl.VarName");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 		otherlv_2=';'
 		{
 			newLeafNode(otherlv_2, grammarAccess.getVarsAccess().getSemicolonKeyword_2());
