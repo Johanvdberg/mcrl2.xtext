@@ -1,0 +1,18 @@
+grammar test.reflang.dsl.RefDsl with org.eclipse.xtext.common.Terminals
+
+generate refDsl "http://www.reflang.test/dsl/RefDsl"
+import "http://www.multiname.test/dsl/MultiNameDsl" as multi
+
+Model:
+	ref_from=Import
+	refs=DataRef;
+
+Import:
+	'import' imports=[multi::Module];
+
+DataRef:
+	'ref_vars' data+=[multi::VarName|FQN] (',' data+=[multi::VarName|FQN])*;
+
+FQN:
+	ID ("." ID)*;
+	
