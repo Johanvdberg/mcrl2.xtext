@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalMultiNameDslParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'begin module'", "'end_module'", "'func'", "'='", "';'", "')'", "'var'", "'('"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'begin_module'", "'end_module'", "'func'", "'='", "';'", "')'", "'var'", "'('"
     };
     public static final int RULE_ID=4;
     public static final int RULE_WS=9;
@@ -620,21 +620,21 @@ public class InternalMultiNameDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Module__Group__0__Impl"
-    // InternalMultiNameDsl.g:221:1: rule__Module__Group__0__Impl : ( 'begin module' ) ;
+    // InternalMultiNameDsl.g:221:1: rule__Module__Group__0__Impl : ( 'begin_module' ) ;
     public final void rule__Module__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMultiNameDsl.g:225:1: ( ( 'begin module' ) )
-            // InternalMultiNameDsl.g:226:1: ( 'begin module' )
+            // InternalMultiNameDsl.g:225:1: ( ( 'begin_module' ) )
+            // InternalMultiNameDsl.g:226:1: ( 'begin_module' )
             {
-            // InternalMultiNameDsl.g:226:1: ( 'begin module' )
-            // InternalMultiNameDsl.g:227:2: 'begin module'
+            // InternalMultiNameDsl.g:226:1: ( 'begin_module' )
+            // InternalMultiNameDsl.g:227:2: 'begin_module'
             {
-             before(grammarAccess.getModuleAccess().getBeginModuleKeyword_0()); 
+             before(grammarAccess.getModuleAccess().getBegin_moduleKeyword_0()); 
             match(input,11,FOLLOW_2); 
-             after(grammarAccess.getModuleAccess().getBeginModuleKeyword_0()); 
+             after(grammarAccess.getModuleAccess().getBegin_moduleKeyword_0()); 
 
             }
 

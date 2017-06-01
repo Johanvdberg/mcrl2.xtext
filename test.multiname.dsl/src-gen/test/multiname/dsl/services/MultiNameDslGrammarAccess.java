@@ -41,7 +41,7 @@ public class MultiNameDslGrammarAccess extends AbstractGrammarElementFinder {
 	public class ModuleElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "test.multiname.dsl.MultiNameDsl.Module");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cBeginModuleKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cBegin_moduleKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Assignment cVarsAssignment_2 = (Assignment)cGroup.eContents().get(2);
@@ -51,17 +51,17 @@ public class MultiNameDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cEnd_moduleKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//Module:
-		//	'begin module' name=ID
+		//	'begin_module' name=ID
 		//	vars+=Vars*
 		//	funcs+=Funcs*
 		//	'end_module';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'begin module' name=ID vars+=Vars* funcs+=Funcs* 'end_module'
+		//'begin_module' name=ID vars+=Vars* funcs+=Funcs* 'end_module'
 		public Group getGroup() { return cGroup; }
 		
-		//'begin module'
-		public Keyword getBeginModuleKeyword_0() { return cBeginModuleKeyword_0; }
+		//'begin_module'
+		public Keyword getBegin_moduleKeyword_0() { return cBegin_moduleKeyword_0; }
 		
 		//name=ID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
@@ -285,7 +285,7 @@ public class MultiNameDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Module:
-	//	'begin module' name=ID
+	//	'begin_module' name=ID
 	//	vars+=Vars*
 	//	funcs+=Funcs*
 	//	'end_module';

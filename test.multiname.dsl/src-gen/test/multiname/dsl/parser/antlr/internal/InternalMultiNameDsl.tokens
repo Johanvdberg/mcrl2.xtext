@@ -2,7 +2,7 @@
 ')'=15
 ';'=17
 '='=16
-'begin module'=11
+'begin_module'=11
 'end_module'=12
 'func'=13
 'var'=18

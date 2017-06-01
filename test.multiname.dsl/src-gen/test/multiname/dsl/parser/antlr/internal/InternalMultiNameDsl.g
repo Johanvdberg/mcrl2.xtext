@@ -112,9 +112,9 @@ ruleModule returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='begin module'
+		otherlv_0='begin_module'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getModuleAccess().getBeginModuleKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getModuleAccess().getBegin_moduleKeyword_0());
 		}
 		(
 			(

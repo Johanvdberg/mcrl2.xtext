@@ -224,9 +224,9 @@ rule__Module__Group__0__Impl
 	}
 :
 (
-	{ before(grammarAccess.getModuleAccess().getBeginModuleKeyword_0()); }
-	'begin module'
-	{ after(grammarAccess.getModuleAccess().getBeginModuleKeyword_0()); }
+	{ before(grammarAccess.getModuleAccess().getBegin_moduleKeyword_0()); }
+	'begin_module'
+	{ after(grammarAccess.getModuleAccess().getBegin_moduleKeyword_0()); }
 )
 ;
 finally {

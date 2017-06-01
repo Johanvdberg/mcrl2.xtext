@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalMultiNameDslParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'begin module'", "'end_module'", "'func'", "'('", "')'", "'='", "';'", "'var'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'begin_module'", "'end_module'", "'func'", "'('", "')'", "'='", "';'", "'var'"
     };
     public static final int RULE_ID=4;
     public static final int RULE_WS=9;
@@ -240,7 +240,7 @@ public class InternalMultiNameDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleModule"
-    // InternalMultiNameDsl.g:107:1: ruleModule returns [EObject current=null] : (otherlv_0= 'begin module' ( (lv_name_1_0= RULE_ID ) ) ( (lv_vars_2_0= ruleVars ) )* ( (lv_funcs_3_0= ruleFuncs ) )* otherlv_4= 'end_module' ) ;
+    // InternalMultiNameDsl.g:107:1: ruleModule returns [EObject current=null] : (otherlv_0= 'begin_module' ( (lv_name_1_0= RULE_ID ) ) ( (lv_vars_2_0= ruleVars ) )* ( (lv_funcs_3_0= ruleFuncs ) )* otherlv_4= 'end_module' ) ;
     public final EObject ruleModule() throws RecognitionException {
         EObject current = null;
 
@@ -256,15 +256,15 @@ public class InternalMultiNameDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMultiNameDsl.g:113:2: ( (otherlv_0= 'begin module' ( (lv_name_1_0= RULE_ID ) ) ( (lv_vars_2_0= ruleVars ) )* ( (lv_funcs_3_0= ruleFuncs ) )* otherlv_4= 'end_module' ) )
-            // InternalMultiNameDsl.g:114:2: (otherlv_0= 'begin module' ( (lv_name_1_0= RULE_ID ) ) ( (lv_vars_2_0= ruleVars ) )* ( (lv_funcs_3_0= ruleFuncs ) )* otherlv_4= 'end_module' )
+            // InternalMultiNameDsl.g:113:2: ( (otherlv_0= 'begin_module' ( (lv_name_1_0= RULE_ID ) ) ( (lv_vars_2_0= ruleVars ) )* ( (lv_funcs_3_0= ruleFuncs ) )* otherlv_4= 'end_module' ) )
+            // InternalMultiNameDsl.g:114:2: (otherlv_0= 'begin_module' ( (lv_name_1_0= RULE_ID ) ) ( (lv_vars_2_0= ruleVars ) )* ( (lv_funcs_3_0= ruleFuncs ) )* otherlv_4= 'end_module' )
             {
-            // InternalMultiNameDsl.g:114:2: (otherlv_0= 'begin module' ( (lv_name_1_0= RULE_ID ) ) ( (lv_vars_2_0= ruleVars ) )* ( (lv_funcs_3_0= ruleFuncs ) )* otherlv_4= 'end_module' )
-            // InternalMultiNameDsl.g:115:3: otherlv_0= 'begin module' ( (lv_name_1_0= RULE_ID ) ) ( (lv_vars_2_0= ruleVars ) )* ( (lv_funcs_3_0= ruleFuncs ) )* otherlv_4= 'end_module'
+            // InternalMultiNameDsl.g:114:2: (otherlv_0= 'begin_module' ( (lv_name_1_0= RULE_ID ) ) ( (lv_vars_2_0= ruleVars ) )* ( (lv_funcs_3_0= ruleFuncs ) )* otherlv_4= 'end_module' )
+            // InternalMultiNameDsl.g:115:3: otherlv_0= 'begin_module' ( (lv_name_1_0= RULE_ID ) ) ( (lv_vars_2_0= ruleVars ) )* ( (lv_funcs_3_0= ruleFuncs ) )* otherlv_4= 'end_module'
             {
             otherlv_0=(Token)match(input,11,FOLLOW_4); 
 
-            			newLeafNode(otherlv_0, grammarAccess.getModuleAccess().getBeginModuleKeyword_0());
+            			newLeafNode(otherlv_0, grammarAccess.getModuleAccess().getBegin_moduleKeyword_0());
             		
             // InternalMultiNameDsl.g:119:3: ( (lv_name_1_0= RULE_ID ) )
             // InternalMultiNameDsl.g:120:4: (lv_name_1_0= RULE_ID )

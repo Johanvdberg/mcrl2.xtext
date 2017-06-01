@@ -6,7 +6,7 @@ Model:
 	modules+=Module+;
 
 Module:
-	'begin module' name=ID
+	'begin_module' name=ID
 	vars+=Vars*
 	funcs+=Funcs*
 	'end_module';
